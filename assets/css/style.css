@@ -1,0 +1,306 @@
+:root {
+    /* 1. Primary Color – The Photo Blue (Navy) */
+    /* Use for: Header, Main Buttons, Footer, Sidebar, Prices, Highlights */
+    --primary-color: #0B3C5D;
+
+    /* 2. Secondary/Highlight - SAME as Primary (Monochromatic) */
+    --secondary-color: #0B3C5D;
+
+    /* 3. Background */
+    --main-bg: #F5F5F5;
+    --card-bg: #FFFFFF;
+
+    /* 4. Text Color */
+    --text-color: #333333;
+
+    /* Status Colors */
+    /* Status Colors */
+    --success-color: #0B3C5D;
+    --error-color: #E74C3C;
+
+    /* Global Bootstrap Overrides to enforce Navy */
+    --bs-primary: #0B3C5D;
+    /* Bootstrap 5 var */
+    --bs-primary-rgb: 11, 60, 93;
+
+    /* Restore Gold for Ratings/Warning */
+    --warning-color: #FFD700;
+    --bs-warning: #FFD700;
+}
+
+/* Force Bootstrap Utility Classes to use proper Navy */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+.text-warning {
+    color: var(--warning-color) !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--main-bg);
+    font-family: 'Inter', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--primary-color) !important;
+    /* Navy */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    transition: transform 0.15s linear;
+}
+
+.navbar.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+    /* White text on Blue Navbar */
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white !important;
+    opacity: 1;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(11, 60, 93, 0.95)), url('https://source.unsplash.com/1600x900/?hotel,resort,nepal') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    margin-bottom: 40px;
+    border-radius: 0 0 20px 20px;
+}
+
+.hero h1 {
+    color: white;
+    /* White text on Blue Hero */
+    font-weight: 700;
+}
+
+/* Typography & Prices */
+.text-list-name {
+    color: var(--primary-color) !important;
+    /* Navy for Titles/Names */
+    font-weight: 700;
+}
+
+.text-section-title {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+/* Force Price to be Blue (Monochromatic) */
+.text-price,
+h4.text-dark {
+    color: var(--primary-color) !important;
+}
+
+/* Cards - 60% Base with subtle elevation */
+.card {
+    border: none;
+    border-radius: 12px;
+    background: var(--card-bg);
+    /* White */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Room Cards Small */
+.room-card:hover {
+    transition: transform 0.2s ease;
+}
+
+/* Buttons */
+/* "Main buttons (Book Now, Reserve) -> Primary Color (Navy)" */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #082d46;
+    /* Darker shade of the same Blue */
+    border-color: #082d46;
+    color: white;
+}
+
+/* Secondary Button (Outline Blue) */
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Success/Status Indicators */
+.btn-success,
+.badge-success,
+.bg-success {
+    background-color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+}
+
+.text-success {
+    color: var(--success-color) !important;
+}
+
+/* Footer - Dark Blue (Primary) */
+footer {
+    background-color: var(--primary-color) !important;
+    color: white;
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+/* Scroll Offset for Fixed Headers */
+.scroll-offset {
+    scroll-margin-top: 140px;
+    /* Navbar + Tab bar height */
+}
+
+/* Autocomplete Suggestions */
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+    color: var(--primary-color);
+}
+
+/* Mobile & Tablet Responsive Optimizations */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .suggestions-list {
+        max-height: 150px;
+    }
+
+    /* Ensure navbar doesn't cover content on mobile */
+    .main-content {
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover {
+        transform: none;
+    }
+
+    .suggestion-item {
+        padding: 12px 15px;
+        min-height: 44px;
+        /* Apple's touch target size */
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        min-height: 44px;
+    }
+}
